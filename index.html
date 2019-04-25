@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <title>like</title>
+</head>
+<body>
+    <img onclick="like()" id='1' src="like.png">
+    <div id='2'>
+        100
+    </div>
+</body>
+<script>
+    let likeCheck = (pressed1)=>{
+        if(JSON.parse(pressed1)){
+            console.log(pressed1)
+            document.getElementById('1').src = 'like1.png'
+            document.getElementById('2').innerHTML = parseInt (a)+1
+        }else{
+            document.getElementById('1').src = 'like.png'
+            document.getElementById('2').innerHTML = parseInt (a)-1
+        }
+    }
+    let a = document.getElementById('2').innerHTML
+    let pressed = localStorage.like1234
+
+    console.log(localStorage.like1234)
+    let like = ()=>{
+        pressed = !pressed
+        localStorage.like1234 = pressed
+        likeCheck(pressed)
+    }
+$( document ).ready( likeCheck(pressed) );
+</script>
+<style>
+    img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+</html>
